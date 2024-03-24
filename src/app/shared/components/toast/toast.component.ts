@@ -19,8 +19,6 @@ export class ToastComponent implements OnInit, OnDestroy {
     this.subscription = this.toastUtilsService.toastSubject$.subscribe(
       ({ type, message }: { type: string; message: string }) => {
         this.show = true;
-
-        console.log('show:', this.show);
         setTimeout(() => {
           this.show = false;
         }, 3000);
