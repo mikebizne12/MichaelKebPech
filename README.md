@@ -13,7 +13,7 @@ This project has the following functionalities:
 - [Angular CLI](https://github.com/angular/angular-cli) (v17.3.0 recomendada)
 
 ```bash
-git git@github.com:mikebizne12/MichaelKebPech.git
+git clone git@github.com:mikebizne12/MichaelKebPech.git
 cd MichaelKebPech
 npm install
 ng serve
