@@ -1,0 +1,38 @@
+$btn-primary: #f4df66;
+$btn-primary-dark: darken($btn-primary, 10%);
+$btn-primary-light: lighten($btn-primary, 10%);
+
+$btn-secondary: #e9ecf0;
+$btn-secondary-dark: darken($btn-secondary, 10%);
+$btn-secondary-light: lighten($btn-secondary, 10%);
+
+$primary: #192f63;
+$primary-dark: darken($primary, 10%);
+$primary-light: lighten($primary, 10%);
+
+:root {
+  --primary: #{$primary};
+  --primary-dark: #{$primary-dark};
+  --primary-light: #{$primary-light};
+  --secondary: #e9ecf1;
+  --light: #dbebf8;
+  --white: #ffffff;
+  --grey: #8492a6;
+  --border-light: #cccccc;
+  --success: #155724;
+  --danger: #dc3545;
+  --danger-dark: #721c24;
+  --warning: #856404;
+  --table-primary: #f9fafc;
+  --dark: #000000;
+  --table-secondary: #dcdddf;
+  --btn-primary: #{$btn-primary};
+  --btn-primary-dark: #{$btn-primary-dark};
+  --btn-primary-light: #{$btn-primary-light};
+  --btn-secondary: #{$btn-secondary};
+  --btn-secondary-dark: #{$btn-secondary-dark};
+  --btn-secondary-light: #{$btn-secondary-light};
+  --font14: 14px;
+  --font16: 16px;
+  font-size: var(--font16);
+}

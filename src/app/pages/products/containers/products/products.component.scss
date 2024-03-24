@@ -1,0 +1,83 @@
+input[type='text'] {
+  padding: 12px 20px;
+}
+.content-table {
+  padding: 20px;
+  margin-top: 10px;
+  background-color: var(--white);
+  overflow-x: auto;
+}
+
+.table-footer {
+  margin-top: 1em;
+}
+
+img {
+  width: 50px;
+}
+main {
+  margin: 4em 0;
+}
+select {
+  width: 15%;
+  text-align: center;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  font-size: 24px;
+  color: #333;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0 10px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--table-primary);
+  min-width: 120px;
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown-content a {
+  color: var(--dark);
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--table-secondary);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: var(--table-primary);
+}
+
+a {
+  cursor: pointer;
+}
+
+.dropdown-content a:first-child {
+  border-bottom: 1px solid var(--table-secondary);
+}
+
+.btn-next,
+.btn-prev {
+  padding: 5px;
+}
+
+.text-pagination {
+  margin: 0 5px;
+}

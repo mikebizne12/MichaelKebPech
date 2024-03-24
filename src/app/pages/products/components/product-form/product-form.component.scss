@@ -1,0 +1,33 @@
+section {
+  background-color: var(--white);
+}
+
+section h1 {
+  font-size: 28px;
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+hr {
+  border-color: var(--grey);
+}
+
+form {
+  padding: 20px 30px 50px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.content-buttons {
+  margin-top: 50px;
+}
+
+.content-buttons.row > .column:first-child {
+  padding-right: 3em;
+}
+
+.content-buttons.row > .column:last-child {
+  padding-left: 3em;
+}

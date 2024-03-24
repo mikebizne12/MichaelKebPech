@@ -1,0 +1,102 @@
+<main>
+  <section>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="column d-flex just-content-start">
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            placeholder="Buscar..."
+            (input)="onValidateTableTrLength()"
+          />
+        </div>
+        <div class="column d-flex just-content-end">
+          <button class="btn btn-primary" id="btn-cancel" (click)="onCreate()">
+            Agregar
+          </button>
+        </div>
+      </div>
+      <div class="content-table align-content-center">
+        <app-spinner
+          class="d-flex just-content-center"
+          *ngIf="isLoading"
+        ></app-spinner>
+        <ng-container *ngIf="!isLoading">
+          <table class="table-responsive" id="table">
+            <thead>
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Logo</th>
+                <th scope="col">Nombre del producto</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Fecha de liberación</th>
+                <th scope="col">Fecha de reestructuración</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let product of productList | searchText : searchText">
+                <td>{{ product.id }}</td>
+                <td><img [src]="sanitizeUrl(product.logo)" /></td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.description }}</td>
+                <td class="text-center">
+                  {{ product.date_release | date : "shortDate" }}
+                </td>
+                <td class="text-center">
+                  {{ product.date_revision | date : "shortDate" }}
+                </td>
+                <td class="dropdown">
+                  <button class="dropbtn">⋮</button>
+                  <div class="dropdown-content">
+                    <a (click)="onUpdate(product)">Editar</a>
+                    <a (click)="onDelete(product)">Eliminar</a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div
+            class="row table-footer align-items-center"
+            *ngIf="productFullList.length > 0"
+          >
+            <div class="column d-flex just-content-start">
+              <b>{{ productFullList.length }} Resultados</b>
+            </div>
+            <div
+              [class.hide]="hidePagination"
+              class="column d-flex just-content-center align-items-center"
+            >
+              <button class="btn btn-prev" (click)="previousPage()">
+                Anterior
+              </button>
+              <span class="text-pagination"
+                >Página {{ currentPage }} de {{ totalPages }}</span
+              >
+              <button class="btn btn-next" (click)="nextPage()">
+                Siguiente
+              </button>
+            </div>
+            <div
+              [class.hide]="hidePagination"
+              class="column d-flex just-content-end"
+            >
+              <select (change)="onChangePageSize($event)">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+              </select>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+    <app-modal-confirm
+      *ngIf="showModal"
+      [productName]="productToDelete!.name"
+      (confirmed)="handleConfirm($event)"
+    ></app-modal-confirm>
+  </section>
+</main>

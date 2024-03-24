@@ -1,0 +1,21 @@
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table thead {
+  background-color: var(--table-primary);
+}
+tr {
+  border-bottom: 1px solid var(--table-secondary);
+}
+
+th,
+td {
+  border: none;
+  padding: 10px;
+  text-align: left;
+}

@@ -1,0 +1,40 @@
+.container {
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.column {
+  flex-grow: 1;
+  flex-basis: 0;
+  box-sizing: border-box;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.just-content-start {
+  justify-content: start;
+}
+
+.just-content-center {
+  justify-content: center;
+}
+
+.just-content-end {
+  justify-content: end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-content-center {
+  align-content: center;
+}

@@ -1,0 +1,30 @@
+.modal {
+  background: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px #333;
+  min-width: 620px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 11;
+}
+
+.overlay {
+  background: var(--dark);
+  height: 100vh;
+  left: 0;
+  opacity: 0.5;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+}
+.modal-content {
+  text-align: center;
+  padding: 20px 40px 60px;
+}
+.modal-footer {
+  border-top: 1px solid var(--border-light);
+  padding: 20px 50px;
+}

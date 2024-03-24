@@ -1,0 +1,135 @@
+<main class="container">
+  <section>
+    <h1>Formulario de Registro</h1>
+    <hr />
+    <form [formGroup]="form">
+      <div class="row">
+        <div class="column">
+          <div class="form-group">
+            <label for="id">ID</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                name="id"
+                formControlName="id"
+                [ngClass]="{ error: form.controls['id'].invalid }"
+              />
+            </div>
+            <div class="text-danger" *ngIf="form.get('id')?.invalid">
+              ID no válido!
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="form-group">
+            <label for="name">Nombre</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                [ngClass]="{ error: form.controls['name'].invalid }"
+                name="name"
+                formControlName="name"
+              />
+            </div>
+            <div class="text-danger" *ngIf="form.get('name')?.invalid">
+              Este campo es requerido!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="form-group">
+            <label for="description">Descripción</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                name="description"
+                [ngClass]="{
+                  error: form.controls['description'].invalid
+                }"
+                formControlName="description"
+              />
+            </div>
+            <div
+              class="text-danger"
+              *ngIf="form.get('description')?.invalid"
+            >
+              Este campo es requerido!
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="form-group">
+            <label for="logo">Logo</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                name="logo"
+                [ngClass]="{ error: form.controls['logo'].invalid }"
+                formControlName="logo"
+              />
+            </div>
+            <div class="text-danger" *ngIf="form.get('logo')?.invalid">
+              Este campo es requerido!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column">
+          <div class="form-group">
+            <label for="date_release">Fecha Liberación</label>
+            <div class="input-group">
+              <input
+                type="date"
+                class="form-control"
+                name="date_release"
+                formControlName="date_release"
+                [min]="minDate"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="form-group">
+            <label for="date_revision">Fecha Revisión</label>
+            <div class="input-group">
+              <input
+                type="date"
+                class="form-control"
+                name="date_revision"
+                formControlName="date_revision"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row content-buttons">
+        <div class="column d-flex just-content-end">
+          <button class="btn btn-secondary" (click)="onReset()">
+            Reiniciar
+          </button>
+        </div>
+        <div class="column d-flex just-content-star">
+          <app-spinner
+            class="d-flex just-content-center"
+            *ngIf="isLoading"
+          ></app-spinner>
+          <button
+            class="btn btn-primary"
+            (click)="onSend()"
+            [disabled]="!form.valid"
+            *ngIf="!isLoading"
+          >
+            Enviar
+          </button>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>

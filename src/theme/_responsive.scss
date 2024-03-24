@@ -1,0 +1,70 @@
+@media (max-width: 768px) {
+  table,
+  th,
+  td {
+    display: grid;
+  }
+
+  th,
+  td {
+    border: none;
+    padding: 10px;
+    text-align: left;
+  }
+
+  tr {
+    border-bottom: 1px solid var(--table-secondary);
+  }
+
+  .row {
+    display: block;
+  }
+
+  .just-content-start,
+  .just-content-end {
+    justify-content: normal;
+  }
+
+  .d-flex {
+    display: grid;
+  }
+
+  .content-buttons.row > .column:first-child {
+    padding-right: 0em !important;
+    margin-bottom: 1em;
+  }
+
+  .content-buttons.row > .column:last-child {
+    padding-left: 0em !important;
+  }
+
+  .modal {
+    min-width: 360px !important;
+  }
+
+  .modal-footer {
+    padding: 1em !important;
+  }
+
+  .modal-footer button {
+    width: 100% !important;
+    margin-top: 1em;
+  }
+
+  .table-footer {
+    text-align: center;
+  }
+
+  select {
+    width: 100% !important;
+    margin-top: 1em;
+  }
+
+  .table-footer div:nth-child(2) {
+    display: inline-block;
+  }
+
+  .table-footer div:nth-child(2) > button {
+    margin: 1em 0;
+  }
+}
